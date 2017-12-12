@@ -5,6 +5,9 @@ import tempfile
 import os
 import subprocess
 
+# TODO: maybe add html-minifier, clean-css? (from npm)
+
+
 with open('main.js') as f:
     code = f.read()
 
@@ -13,16 +16,17 @@ already_included = set()
 
 def replace_include(match):
     file_name = match.group(2)
+    file_ext = os.path.splitext(file_name)[-1][1:]
     if match.group(1) == '_once' and file_name in already_included:
         return ''
     already_included.add(file_name)
-    with open('js_includes/{}'.format(file_name)) as f:
+    with open('{}_includes/{}'.format(file_ext, file_name)) as f:
         contents = f.read()
     return contents
 
 
 while True:
-    code, n = re.subn(r'//[ ]*include(_once)?{([a-z0-9/\.-_]+)}', replace_include, code)
+    code, n = re.subn(r'(?://[ ]*|#)include(_once)?{([a-z0-9/\.-_]+)}', replace_include, code)
     if n == 0:
         break
 
@@ -42,9 +46,15 @@ def replace_datauri(match):
 code = re.sub(r'#base64{([a-z0-9/\.-_]+)}', replace_base64, code)
 code = re.sub(r'#datauri{([a-z/]+),([a-z0-9/\.-_]+)}', replace_datauri, code)
 
+with open('debug_data/raw_output.js', 'w') as f:
+    f.write(code)
+
 with tempfile.NamedTemporaryFile('w') as f:
     f.write(code)
     code = subprocess.check_output(['uglifyjs', '--compress', '--mangle', 'toplevel', f.name]).decode('utf-8')
+
+with open('debug_data/raw_output.min.js', 'w') as f:
+    f.write(code)
 
 with tempfile.NamedTemporaryFile('w') as f:
     f.write(code)
