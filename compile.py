@@ -9,14 +9,20 @@ with open('main.js') as f:
     code = f.read()
 
 
+already_included = set()
+
 def replace_include(match):
-    with open('js_includes/{}'.format(match.group(1))) as f:
+    file_name = match.group(2)
+    if match.group(1) == '_once' and file_name in already_included:
+        return ''
+    already_included.add(file_name)
+    with open('js_includes/{}'.format(file_name)) as f:
         contents = f.read()
     return contents
 
 
 while True:
-    code, n = re.subn(r'//[ ]*include{([a-z0-9/\.-_]+)}', replace_include, code)
+    code, n = re.subn(r'//[ ]*include(_once)?{([a-z0-9/\.-_]+)}', replace_include, code)
     if n == 0:
         break
 
