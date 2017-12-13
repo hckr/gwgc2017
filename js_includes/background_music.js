@@ -9,23 +9,18 @@ for (let i = 0; i < byteString.length; ++i) {
 }
 
 gainNode.connect(audioCtx.destination);
-gainNode.gain.value = 0.2;
 
 audioCtx.decodeAudioData(ia.buffer, function(buffer) {
    source.buffer = buffer;
    source.connect(gainNode);
-   source.loop = true
+   source.loop = true;
    source.start(0);
 });
 
-(t=q('b')).onclick = _ => {
-    d = 'mute'
-    e = 'unmute'
-    if ((f=t.firstChild).innerHTML == d) {
-        f.innerHTML = e;
-        gainNode.gain.value = 0;
-    } else {
-        f.innerHTML = d;
-        gainNode.gain.value = 0.2;
-    }
+function muteBackgroundMusic() {
+    gainNode.gain.setValueAtTime(0, 0);
+}
+
+function unmuteBackgroundMusic() {
+    gainNode.gain.setValueAtTime(1, 0);
 }

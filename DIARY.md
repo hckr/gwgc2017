@@ -10,6 +10,8 @@ Someone mentioned about this in [comments][1]. Two relevant search results showe
 
 I found a great [background music][5], but unfortunately it's file size is 5.5 MB (3:12, OGG). After cutting out a 0:15 sample, resampling it down to 2500 Hz and saving with quality level 0 (max is 10), I managed to end up with a 10488-byte file. It's hard to imagine that all other things will fit into remaining ~10 kB, but let's hope for the best for now.
 
+I found another [background music][6], because as I noticed, Chrome had trouble reading previous one. What's interesing is the new one which is the same format, 2500 Hz & 0-quality, plays just fine. Remember to always check in multiple browsers, especially if contest is targeted at Chrome! As a plus, I get a couple more bytes, since new background music is 8183 bytes.
+
 ## Looping audio
 
 `<audio loop>` doesn't loop correctly, there is always a small gap before restart. Web Audio API (`window.AudioContext`) doesn't have this defect.
@@ -20,3 +22,4 @@ I found a great [background music][5], but unfortunately it's file size is 5.5 M
 [3]: http://www.p01.org/andes/
 [4]: https://web.archive.org/web/20120919185414/http://daeken.com/superpacking-js-demos
 [5]: https://opengameart.org/content/adventure-begins
+[6]: https://opengameart.org/content/generic-8-bit-jrpg-soundtrack
