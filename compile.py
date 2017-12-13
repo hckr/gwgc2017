@@ -5,7 +5,9 @@ import tempfile
 import os
 import subprocess
 
-# TODO: maybe add html-minifier, clean-css? (from npm)
+# Maybe add html-minifier, clean-css? (from npm)
+# ^ NOPE. Resulting size is somehow smaller
+#         without minification.
 
 
 with open('main.js') as f:

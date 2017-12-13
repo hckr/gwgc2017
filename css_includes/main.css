@@ -1,10 +1,15 @@
+:root { --color: #888; --shadow-color: #fff; }
 * { color: inherit; transition: .2s ease-out all; font: 16px normal monospace; -moz-user-select: none; -webkit-user-select: none; }
-html { color: white; background: #eef; text-align: center; }
-#w { display: inline-block; position: relative; }
-#o { position: absolute; left: 0; top: 0; bottom: 0; right: 0; background: rgba(50, 50, 50, 0.6); }
-#c { filter: blur(3px); }
+html { background: #eef; text-align: center; }
+#w { color: var(--color); display: inline-block; position: relative; }
+#w * { text-shadow: var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px; }
+#w.o * { --color: white; }
+#w.o { --color: white; --shadow-color: #333; }
+#w.o #o { display: block; }
+#w.o #c { filter: blur(3px); }
+#o { display: none; position: absolute; left: 0; top: 0; bottom: 0; right: 0; background: rgba(50,50,50,.6); }
 m { font-size: 32px; }
 h1 { font-size: 64px; margin: 80px 0; }
 c { position: absolute; top: 10px; right: 10px; }
 m, b { cursor: pointer; }
-m:hover, b:hover { color: lightblue; }
+#w.o m:hover, #w.o b:hover { color: lightblue; }
