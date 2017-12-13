@@ -16,6 +16,10 @@ I found another [background music][6], because as I noticed, Chrome had trouble 
 
 `<audio loop>` doesn't loop correctly, there is always a small gap before restart. Web Audio API (`window.AudioContext`) doesn't have this defect.
 
+## Compression is like a box of chocolates
+
+After I boosted the background volume up in Audacity (using "Amplify" filter), the file size dropped to 5730 bytes. It's a kind of magic!
+
 
 [1]: http://gynvael.coldwind.pl/?id=668#comments
 [2]: https://gist.github.com/gasman/2560551
