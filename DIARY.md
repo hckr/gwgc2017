@@ -10,15 +10,17 @@ Someone mentioned about this in [comments][1]. Two relevant search results showe
 
 I found a great [background music][5], but unfortunately it's file size is 5.5 MB (3:12, OGG). After cutting out a 0:15 sample, resampling it down to 2500 Hz and saving with quality level 0 (max is 10), I managed to end up with a 10488-byte file. It's hard to imagine that all other things will fit into remaining ~10 kB, but let's hope for the best for now.
 
-I found another [background music][6], because as I noticed, Chrome had trouble reading previous one. What's interesing is the new one which is the same format, 2500 Hz & 0-quality, plays just fine. Remember to always check in multiple browsers, especially if contest is targeted at Chrome! As a plus, I get a couple more bytes, since new background music is 8183 bytes.
+I found another [background music][6], because as I noticed, Chrome had trouble reading previous one. <s>What's interesing is the new one which is the same format, 2500 Hz & 0-quality, plays just fine.</s> I must have messed something up. Real thing seems to be that Chrome refuses to play file with less than 3000 Hz. Remember to always check in multiple browsers, especially if contest is targeted at Chrome! <s>As a plus, I get a couple more bytes, since new background music is 8183 bytes.</s> New file is 6209 bytes.
 
 ## Looping audio
 
 `<audio loop>` doesn't loop correctly, there is always a small gap before restart. Web Audio API (`window.AudioContext`) doesn't have this defect.
 
-## Compression is like a box of chocolates
+## <s>Compression is like a box of chocolates</s>
 
-After I boosted the background volume up in Audacity (using "Amplify" filter), the file size dropped to 5730 bytes. It's a kind of magic!
+<s>After I boosted the background volume up in Audacity (using "Amplify" filter), the file size dropped to 5730 bytes. It's a kind of magic!</s>
+
+I just can't use Audacity properly. Final freq is set at the bottom as "Project Rate". I must have selected this finally and hence the effect.
 
 
 [1]: http://gynvael.coldwind.pl/?id=668#comments
