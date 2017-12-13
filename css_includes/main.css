@@ -4,9 +4,9 @@ html { background: #eef; text-align: center; }
 #W, #c { transition: .2s ease-out all; }
 #W * { text-shadow: var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px; }
 #W.o { --color: white; --shadow-color: #333; }
-#W.o #o { display: block; }
+#W.o #o { opacity: 1; }
 #W.o #c { filter: blur(3px); }
-#o { display: none; position: absolute; left: 0; top: 0; bottom: 0; right: 0; background: rgba(50,50,50,.6); }
+#o { opacity: 0; transition: .2s ease-out opacity; position: absolute; left: 0; top: 0; bottom: 0; right: 0; background: rgba(50,50,50,.6); }
 m { font-size: 32px; }
 h1 { font-size: 64px; margin: 80px 0; }
 c { position: absolute; top: 10px; right: 10px; }
