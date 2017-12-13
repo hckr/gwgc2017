@@ -1,9 +1,9 @@
 q('m[n]').onclick = _ => hideOverlay();
 
 function showOverlay() {
-    w.classList.add('o');
+    W.classList.add('o');
 }
 
 function hideOverlay() {
-    w.classList.remove('o');
+    W.classList.remove('o');
 }

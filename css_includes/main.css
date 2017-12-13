@@ -1,14 +1,14 @@
 * { font: 16px normal monospace; -moz-user-select: none; -webkit-user-select: none; }
 html { background: #eef; text-align: center; }
-#w { --color: #888; --shadow-color: #fff; color: var(--color); display: inline-block; position: relative; }
-#w, #c { transition: .2s ease-out all; }
-#w * { text-shadow: var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px; }
-#w.o { --color: white; --shadow-color: #333; }
-#w.o #o { display: block; }
-#w.o #c { filter: blur(3px); }
+#W { --color: #888; --shadow-color: #fff; color: var(--color); display: inline-block; position: relative; }
+#W, #c { transition: .2s ease-out all; }
+#W * { text-shadow: var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px, var(--shadow-color) 0px 0px 1px; }
+#W.o { --color: white; --shadow-color: #333; }
+#W.o #o { display: block; }
+#W.o #c { filter: blur(3px); }
 #o { display: none; position: absolute; left: 0; top: 0; bottom: 0; right: 0; background: rgba(50,50,50,.6); }
 m { font-size: 32px; }
 h1 { font-size: 64px; margin: 80px 0; }
 c { position: absolute; top: 10px; right: 10px; }
 m, b { cursor: pointer; }
-#w m:hover, #w.o b:hover { color: lightblue; }
+#W m:hover, #W.o b:hover { color: lightblue; }
