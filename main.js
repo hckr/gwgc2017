@@ -7,8 +7,6 @@ document.body.innerHTML = `#include{main.html}`;
 // include_once{background_music.js}
 // include_once{canvas_ops.js}
 
-// muteBackgroundMusic();
-
 (t=q('b')).onclick = _ => {
     d = 'mute'
     e = 'unmute'
@@ -20,6 +18,21 @@ document.body.innerHTML = `#include{main.html}`;
         unmuteBackgroundMusic();
     }
 }
+
+// for weird trockery of newest Chrome
+// uncomment if will be needed
+// setTimeout(_ => {
+//     if (audioCtx.state == 'suspended') {
+//         t.click();
+//         onclick = e => {
+//             audioCtx.resume();
+//             onclick = undefined;
+//             if (e.target != t) {
+//                 t.click();
+//             }
+//         }
+//     }
+// }, 100);
 
 onkeydown = e => {
     switch (e.keyCode) {

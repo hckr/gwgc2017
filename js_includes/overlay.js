@@ -10,7 +10,6 @@ function hideOverlay() {
 }
 
 o.addEventListener('transitionend', _ => {
-    console.log('aaa');
     if (!W.classList.contains('o')) {
         o.style.display = 'none';
     }
