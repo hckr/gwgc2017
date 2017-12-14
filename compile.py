@@ -4,6 +4,7 @@ import base64
 import tempfile
 import os
 import subprocess
+from termcolor import colored
 
 # Maybe add html-minifier, clean-css? (from npm)
 # ^ NOPE. Resulting size is somehow smaller
@@ -48,12 +49,16 @@ def replace_datauri(match):
 code = re.sub(r'#base64{([a-z0-9/\.-_]+)}', replace_base64, code)
 code = re.sub(r'#datauri{([a-z/]+),([a-z0-9/\.-_]+)}', replace_datauri, code)
 
+raw_len = len(code)
+
 with open('debug_data/raw_output.js', 'w') as f:
     f.write(code)
 
 with tempfile.NamedTemporaryFile('w') as f:
     f.write(code)
     code = subprocess.check_output(['uglifyjs', '--compress', '--mangle', 'toplevel', f.name]).decode('utf-8')
+
+minified_len = len(code)
 
 with open('debug_data/raw_output.min.js', 'w') as f:
     f.write(code)
@@ -62,4 +67,5 @@ with tempfile.NamedTemporaryFile('w') as f:
     f.write(code)
     os.system('ruby 3rd_party_tools/pnginator.rb {} index.html >/dev/null 2>&1'.format(f.name))
     size = os.stat('index.html').st_size
-    print('{} bytes used, {} more to go!'.format(size, 20480 - size))
+    print('{} bytes used, {} more to go! [raw js bundle: {}, minified: {}, {}% smaller after compression]'.format(
+        colored(size, 'red', attrs=['reverse', 'bold']), colored(20480 - size, 'blue', attrs=['reverse', 'bold']), raw_len, minified_len, round((minified_len - size) / minified_len * 100)))
