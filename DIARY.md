@@ -22,6 +22,10 @@ I found another [background music][6], because as I noticed, Chrome had trouble 
 
 I just can't use Audacity properly. Final freq is set at the bottom as "Project Rate". I must have selected this finally and hence the effect.
 
+## Emojis for the win 💡
+
+Another great hint from [the comments][1]: I can use emojis instead of some graphics to save space! https://emojipedia.org/ looks like it might be helpful.
+
 
 [1]: http://gynvael.coldwind.pl/?id=668#comments
 [2]: https://gist.github.com/gasman/2560551
