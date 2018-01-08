@@ -5,3 +5,6 @@ However I didn't come up with an idea so there isn't much done – just "a build
 ## How to run
 `index.html` should be served with a HTTP server, otherwise it would not work in Chrome(/ium).
 In Firefox everything is just fine.
+
+## Dependencies
+Compilation requires uglify-js-es6 from npm.

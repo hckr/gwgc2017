@@ -21,18 +21,18 @@ document.body.innerHTML = `#include{main.html}`;
 
 // for weird trockery of newest Chrome
 // uncomment if will be needed
-// setTimeout(_ => {
-//     if (audioCtx.state == 'suspended') {
-//         t.click();
-//         onclick = e => {
-//             audioCtx.resume();
-//             onclick = undefined;
-//             if (e.target != t) {
-//                 t.click();
-//             }
-//         }
-//     }
-// }, 100);
+setTimeout(_ => {
+    if (audioCtx.state == 'suspended') {
+        t.click();
+        onclick = e => {
+            audioCtx.resume();
+            onclick = undefined;
+            if (e.target != t) {
+                t.click();
+            }
+        }
+    }
+}, 100);
 
 onkeydown = e => {
     switch (e.keyCode) {
